@@ -11,9 +11,6 @@ class TabContentItem extends StatefulWidget {
 class TabContentItemState extends State<TabContentItem>
     with SingleTickerProviderStateMixin {
   @override
-  bool get wantKeepAlive => true;
-
-  @override
   void initState() {
     super.initState();
 

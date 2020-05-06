@@ -7,6 +7,11 @@ class ConponentList extends StatefulWidget {
 
 class ConponentListState extends State<ConponentList>
     with SingleTickerProviderStateMixin {
+  @override
+  initState() {
+    print('init');
+  }
+
   Widget ListItem(text, url, {arguments}) {
     return Container(
         padding: EdgeInsets.only(left: 10),
@@ -41,6 +46,7 @@ class ConponentListState extends State<ConponentList>
         title: Text('功能列表'),
       ),
       body: SingleChildScrollView(
+        key: PageStorageKey('功能列表'),
         child: Column(
           children: <Widget>[
             ListItem('轮播图', '/swiper', arguments: {'name': 'ming'}),
