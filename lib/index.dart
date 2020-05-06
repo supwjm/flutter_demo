@@ -13,16 +13,19 @@ class Index extends StatefulWidget {
 
 class IndexState extends State<Index> {
   int _selectedIndex = 0;
-  List _pageList = [
-    new Home(),
-    new ConponentList(),
-    new Mine(),
+  List<Widget> _pageList = [
+    Home(),
+    ConponentList(),
+    Mine(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: this._pageList[this._selectedIndex],
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pageList,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         // 底部导航
         items: <BottomNavigationBarItem>[
