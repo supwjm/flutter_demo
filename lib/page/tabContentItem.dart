@@ -9,11 +9,14 @@ class TabContentItem extends StatefulWidget {
 }
 
 class TabContentItemState extends State<TabContentItem>
-    with SingleTickerProviderStateMixin {
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   void initState() {
     super.initState();
-
+    print('tab init');
     // 上拉加载
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >
